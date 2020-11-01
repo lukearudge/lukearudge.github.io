@@ -31,6 +31,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	text-align: justify;
+  	text-justify: inter-word;
 }
 
 ol, ul {
