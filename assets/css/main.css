@@ -1396,10 +1396,10 @@ input, select, textarea {
 					#header nav ul li a:active {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
-				#header nav ul li:last-child {
+				/*#header nav ul li:last-child {
 					background-image: radial-gradient(rgba(255, 255, 255, 0.20), rgba(155, 52, 52, 0))
 					
-				}
+				}*/
 
 		#header nav.use-middle:after {
 			content: '';
