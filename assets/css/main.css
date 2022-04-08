@@ -23,7 +23,9 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+	scroll-behavior: smooth;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -180,7 +182,7 @@ input, select, textarea {
 		color: #ffffff;
 		font-weight: 600;
 		line-height: 1.5;
-		margin: 0 0 1rem 0;
+		margin: 0 0 0 0;
 		text-transform: uppercase;
 		letter-spacing: 0.2rem;
 	}
@@ -711,7 +713,7 @@ input, select, textarea {
 		.image.main {
 			display: block;
 			margin: 2.5rem 0;
-			width: 55%;
+			width: 50%;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -755,7 +757,7 @@ input, select, textarea {
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2rem 0;
+		margin: 5px 0 5px 0;
 		padding-left: 1em;
 	}
 
@@ -775,8 +777,11 @@ input, select, textarea {
 
 				ul.alt li:first-child {
 					border-top: 0;
-					padding-top: 0;
 				}
+		
+		ul.hori {
+			margin: 0 0 5px 0;
+		}
 
 	dl {
 		margin: 0 0 2rem 0;
@@ -1572,7 +1577,7 @@ input, select, textarea {
 			width: 43rem;
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
-			border-radius: 4px;
+			border-radius: 6px;
 			opacity: 0;
 		}
 
@@ -1647,6 +1652,82 @@ input, select, textarea {
 			}
 
 		}
+
+/*Accordion*/
+
+  details {
+	width: 100%;
+	min-height: 5px;
+	margin: 0 auto;
+	position: relative;
+	box-sizing: border-box;
+	background-color: rgba(255, 255, 255, 0.05);
+	transition: all 1s;
+	border-radius: 6px;
+  }
+  
+  details + details {
+	margin-top: 20px;
+  }
+  
+  details[open] {
+	min-height: 50px;
+	background-color: rgba(255, 255, 255, 0);
+  }
+  
+  details p {
+	color: #96999d;
+	font-weight: 300;
+  }
+  
+  summary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.03);
+	padding: 8px;
+	border-radius: 6px;
+  }
+  
+  summary:focus {
+	outline: none;
+	
+  }
+  
+  summary:focus::after {
+	content: "";
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+  }
+  
+  summary::-webkit-details-marker {
+	display: none
+  }
+  
+  .control-icon {
+	fill: #ffffff;
+	transition: .3s ease;
+	pointer-events: none;
+  }
+  
+  .control-icon-close {
+	display: none;
+  }
+  
+  details[open] .control-icon-close {
+	display: initial;
+	transition: .3s ease;
+  }
+  
+  details[open] .control-icon-expand {
+	display: none;
+  }
+  
 
 /* Footer */
 
