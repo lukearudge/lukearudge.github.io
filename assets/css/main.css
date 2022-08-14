@@ -216,6 +216,7 @@ input, select, textarea {
 
 	h3 {
 		font-size: 1rem;
+		line-height: 0.5;
 	}
 
 	h4 {
@@ -1037,10 +1038,13 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		/* animation-name: color;
+		animation-duration: 4s;
+		animation-iteration-count: infinite; */
 		background-color: transparent;
 		border-radius: 4px;
 		border: 0;
-		box-shadow: inset 0 0 0 1px #ffffff;
+		/* box-shadow: inset 0 0 0 1px #ffffff; */
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
@@ -1048,14 +1052,27 @@ input, select, textarea {
 		font-weight: 300;
 		height: 2.75rem;
 		letter-spacing: 0.2rem;
-		line-height: 2.75rem;
+		/* line-height: 2.75rem; */
+		margin:auto;
 		outline: 0;
 		padding: 0 1.25rem 0 1.35rem;
 		text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
+		/*text-transform: uppercase;*/
 		white-space: nowrap;
 	}
+
+	/* @keyframes color {
+		0% {
+		  background-color: rgba(204, 204, 204, 0.12);
+		}
+		50% {
+		  background-color: rgba(238, 238, 238, 0);
+		}
+		100% {
+		  background-color: rgba(204, 204, 204, 0.12);
+		}
+	  } */
 
 		input[type="submit"]:hover,
 		input[type="reset"]:hover,
@@ -1655,79 +1672,32 @@ input, select, textarea {
 
 /*Accordion*/
 
-  details {
-	width: 100%;
-	min-height: 5px;
-	margin: 0 auto;
-	position: relative;
-	box-sizing: border-box;
-	background-color: rgba(255, 255, 255, 0.05);
-	transition: all 1s;
-	border-radius: 6px;
-  }
-  
-  details + details {
-	margin-top: 20px;
-  }
-  
-  details[open] {
-	min-height: 50px;
-	background-color: rgba(255, 255, 255, 0);
-  }
-  
-  details p {
-	color: #96999d;
-	font-weight: 300;
-  }
-  
-  summary {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.accordion {
+	background-color: rgba(238, 238, 238, 0);
+	color: #444;
 	cursor: pointer;
-	background-color: rgba(255, 255, 255, 0.03);
-	padding: 8px;
-	border-radius: 6px;
-  }
-  
-  summary:focus {
-	outline: none;
-	
-  }
-  
-  summary:focus::after {
-	content: "";
-	height: 100%;
+	padding: 18px;
 	width: 100%;
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+  }
+
+
+  .active, .accordion:hover {
+	animation-play-state: paused;
+	background-color: rgba(204, 204, 204, 0.25);
   }
   
-  summary::-webkit-details-marker {
-	display: none
+  .panel {
+	padding: 0 18px;
+	background-color: rgba(255, 255, 255, 0.08);
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
   }
-  
-  .control-icon {
-	fill: #ffffff;
-	transition: .3s ease;
-	pointer-events: none;
-  }
-  
-  .control-icon-close {
-	display: none;
-  }
-  
-  details[open] .control-icon-close {
-	display: initial;
-	transition: .3s ease;
-  }
-  
-  details[open] .control-icon-expand {
-	display: none;
-  }
-  
 
 /* Footer */
 
