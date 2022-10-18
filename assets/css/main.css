@@ -781,7 +781,10 @@ input, select, textarea {
 				}
 		
 		ul.hori {
+			justify-content: center;
 			margin: 0 0 5px 0;
+			text-align: center;
+
 		}
 
 	dl {
@@ -1333,6 +1336,15 @@ input, select, textarea {
 				display: none;
 			}
 
+		#header > :last-child {
+			margin-top: 0;
+		}
+
+			#header > :last-child:before {
+				display: none;
+			}
+	
+
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
@@ -1403,6 +1415,7 @@ input, select, textarea {
 					display: block;
 					min-width: 7.5rem;
 					height: 2.75rem;
+					justify-content: center;
 					line-height: 2.75rem;
 					padding: 0 1.25rem 0 1.45rem;
 					text-transform: uppercase;
@@ -1522,7 +1535,7 @@ input, select, textarea {
 					-webkit-flex-direction: column;
 					-ms-flex-direction: column;
 					flex-direction: column;
-					min-width: 10rem;
+					min-width: 12rem;
 					max-width: 100%;
 				}
 
