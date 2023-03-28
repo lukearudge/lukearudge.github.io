@@ -8,7 +8,7 @@
 */
 
 html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote, fignote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
@@ -99,7 +99,6 @@ input, select, textarea {
 	}
 
 	body {
-		background: #ffffff;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -116,10 +115,10 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #585858;
+		color: #383838;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.75;
 	}
 
@@ -145,13 +144,19 @@ input, select, textarea {
 		-ms-transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		transition: border-bottom-color 0.2s ease, color 0.2s ease;
 		text-decoration: none;
+		font-weight: 700;
 		color: #585858;
 		border-bottom: dotted 1px rgba(88, 88, 88, 0.5);
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #f2849e !important;
+			color: #4b7fbd;
+		}
+
+		a.alt{
+			font-style: italic;
+			font-weight: 200;
 		}
 
 	strong, b {
@@ -163,13 +168,21 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 2em 0;		
 	}
 
+		p.content {
+			background: #fafafabb;
+			border-radius: 0 10px 10px 0;
+			padding: 0.5em;
+			border-left: solid 4px #c9c9c9;
+		}
+
 	h1 {
-		font-size: 2.75em;
+		font-size: 3.25em;
 		font-weight: 700;
 		line-height: 1.3;
+		padding: 0.5em 0 0 0;
 		margin: 0 0 1em 0;
 		letter-spacing: -0.035em;
 	}
@@ -198,9 +211,9 @@ input, select, textarea {
 	h2, h3, h4, h5, h6 {
 		font-weight: 900;
 		line-height: 1.5;
-		margin: 0 0 2em 0;
+		margin: 0 0 0.5em 0;
 		text-transform: uppercase;
-		letter-spacing: 0.35em;
+		letter-spacing: 0.15em;
 	}
 
 		h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -208,7 +221,7 @@ input, select, textarea {
 		}
 
 	h2 {
-		font-size: 1.1em;
+		font-size: 1.3em;
 	}
 
 	h3 {
@@ -260,10 +273,21 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 4px #c9c9c9;
-		font-style: italic;
+		display: inline-block;
+		max-width: 80%;
 		margin: 0 0 2em 0;
-		padding: 0.5em 0 0.5em 2em;
+		padding: 0.5em;
+		text-align: center;
+		background: #ebebeb;
+		border-radius: 0 10px 10px 0;
+		border-left: solid 4px #484848;
+		
+
+	}
+
+	#fignote-wrap {
+		display: flex;
+		justify-content: center;
 	}
 
 	code {
@@ -2354,8 +2378,9 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 0 0 3em 0;
-			width: 100%;
+			margin: 0 auto 0.5em auto;
+			width: 80%;
+			padding: auto;
 		}
 
 			.image.main img {
@@ -2365,9 +2390,28 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.image.main {
-					margin: 0 0 2em 0;
+					margin: 0 auto 0.5em auto;
+					width: 90%;
 				}
 
+			}
+	
+		.image-header img{
+			display: block;
+			width: 100%;
+			max-height: 15em;
+			border-radius: 0;
+			object-fit: cover;
+			object-position: bottom;
+			padding: 1.75em 0 0 0;
+
+		}
+
+			@media screen and (max-width: 736px) {
+
+				.image-header img{
+					max-height: 7em;
+				}
 			}
 
 /* Table */
@@ -2572,7 +2616,7 @@ input, select, textarea {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		postiion: relative;
+		position: relative;
 		margin: -2.5em 0 0 -2.5em;
 	}
 
@@ -2634,7 +2678,7 @@ input, select, textarea {
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 0.25px%3B stroke: %23ffffff%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='100' y2='100' /%3E%3Cline x1='100' y1='0' x2='0' y2='100' /%3E%3C/svg%3E");
+					/*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cstyle%3Eline %7B stroke-width: 0.25px%3B stroke: %23ffffff%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='100' y2='100' /%3E%3Cline x1='100' y1='0' x2='0' y2='100' /%3E%3C/svg%3E");*/
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: 100% 100%;
@@ -2738,7 +2782,7 @@ input, select, textarea {
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
 					background-color: #333333;
-					opacity: 0.35;
+					opacity: 0.9;
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
@@ -2829,7 +2873,11 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		background-color: #fff;
+		padding: 1% 0 1% 0 ;
+		position: sticky;
+		top: 0;
+		z-index: 10;
 	}
 
 		#header .logo {
@@ -2837,8 +2885,8 @@ input, select, textarea {
 			border-bottom: 0;
 			color: inherit;
 			font-weight: 900;
-			letter-spacing: 0.35em;
-			margin: 0 0 2.5em 0;
+			letter-spacing: 0.15em;
+			
 			text-decoration: none;
 			text-transform: uppercase;
 			display: inline-block;
@@ -2859,7 +2907,7 @@ input, select, textarea {
 					height: 2em;
 				}
 
-		#header nav {
+		/*#header nav {
 			position: fixed;
 			right: 2em;
 			top: 2em;
@@ -2960,11 +3008,11 @@ input, select, textarea {
 						background-size: 1.5em 1.5em;
 					}
 
-		}
+		}*/
 
-/* Menu */
+/*Menu*/
 
-	#wrapper {
+	/*#wrapper {
 		-moz-transition: opacity 0.45s ease;
 		-webkit-transition: opacity 0.45s ease;
 		-ms-transition: opacity 0.45s ease;
@@ -3146,18 +3194,22 @@ input, select, textarea {
 			-ms-transform: scale(1.0) rotate(0deg);
 			transform: scale(1.0) rotate(0deg);
 			opacity: 1;
-		}
+		}*/
 
 /* Main */
 
 	#main {
-		padding: 0em 0 6em 0 ;
+		background-image: url("../../images/bg.png");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center;
 	}
 
 		@media screen and (max-width: 736px) {
 
 			#main {
-				padding: 0em 0 4em 0 ;
+				padding: 0em 0 1em 0 ;
 			}
 
 		}
@@ -3165,8 +3217,10 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 5em 0 6em 0 ;
 		background-color: #f6f6f6;
+		position: sticky;
+		bottom: 0;
+		z-index: 10;
 	}
 
 		#footer > .inner {
@@ -3201,7 +3255,8 @@ input, select, textarea {
 			#footer > .inner .copyright {
 				width: 100%;
 				padding: 0;
-				margin-top: 5em;
+				margin-top: 2em;
+				margin-bottom: 0px;
 				list-style: none;
 				font-size: 0.8em;
 				color: rgba(88, 88, 88, 0.5);
@@ -3228,7 +3283,6 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#footer {
-				padding: 5em 0 3em 0 ;
 			}
 
 				#footer > .inner section:nth-child(1) {
@@ -3260,7 +3314,6 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#footer {
-				padding: 3em 0 1em 0 ;
 			}
 
 				#footer > .inner {
@@ -3286,21 +3339,25 @@ input, select, textarea {
 					}
 
 					#footer > .inner .copyright {
-						margin-top: 3em;
+						margin-top: 1.5em;
 					}
+
+						#footer > .inner .copyright li {
+						margin-bottom: 1.5em;
+						}
 
 		}
 
 		@media screen and (max-width: 480px) {
 
 			#footer > .inner .copyright {
-				margin-top: 3em;
+				margin-top: 2em;
 			}
 
 				#footer > .inner .copyright li {
 					border-left: 0;
 					padding-left: 0;
-					margin: 0.75em 0 0 0;
+					margin: 0.75em 0 0.75m 0;
 					display: block;
 					line-height: inherit;
 				}
@@ -3317,7 +3374,7 @@ input, select, textarea {
 		width: 100%;
 		max-width: 68em;
 		margin: 0 auto;
-		padding: 0 2.5em;
+		padding: 0 2.5em 2em 2.5em;
 	}
 
 		@media screen and (max-width: 736px) {
