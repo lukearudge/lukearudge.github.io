@@ -3222,6 +3222,10 @@ iframe {
 		background-attachment: fixed;
 		background-size: cover;
 		background-position: center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 	}
 
 		@media screen and (max-width: 736px) {
